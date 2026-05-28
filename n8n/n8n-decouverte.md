@@ -140,12 +140,8 @@ Objet de l'email : {{ $('Gmail Trigger').item.json.subject }}
 Analyse ce document et fournis ta réponse JSON.
 ```
 
-### Script formateur — L'art du prompt
-> *"Ce qu'on vient d'écrire s'appelle un 'prompt'. C'est l'instruction qu'on donne à l'IA. Remarquez trois choses importantes : on lui a donné un rôle précis, on lui a dit exactement quoi faire étape par étape, et on lui a demandé un format de sortie JSON très strict. Ce dernier point est crucial : si l'IA répond en prose libre, on ne peut pas utiliser sa réponse dans le workflow. En lui imposant du JSON, on peut brancher sa réponse sur des nœuds suivants comme n'importe quelle autre donnée."*
 
----
-
-## Étape 3 — Parser la réponse JSON de Gemini (10 min)
+## Étape 3 — Parser la réponse JSON de Gemini 
 
 La réponse de Gemini arrive comme une chaîne de texte. On doit la convertir en objet JSON exploitable.
 
