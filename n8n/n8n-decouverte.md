@@ -87,3 +87,82 @@ Pour Virginie : {{ $('Gmail Trigger').item.binary[Object.keys($('Gmail Trigger')
 ## Module 6
 
 {{ Object.keys($('Gmail Trigger').item.binary)[0] }}
+
+
+### Ajouter le nœud "Basic LLM Chain" ou "AI Agent"
+
+> ! *Pour ce cas d'usage, on utilise le nœud **"Basic LLM Chain"** — c'est la forme la plus simple d'intégration LLM dans n8n : on envoie un prompt, on reçoit une réponse. On verra la différence avec un vrai "AI Agent" en fin de module.*
+
+1. Rechercher **"Basic LLM Chain"** → ajouter
+2. Dans le nœud, cliquer sur **"Add model"** → sélectionner **"Google Gemini Chat Model"**
+3. Configurer le modèle :
+   - **Credential** : credential Gemini créé
+   - **Model** : `gemini-1.5-flash` (bon équilibre vitesse/qualité)
+
+### Configurer le prompt système
+
+Le **prompt système** définit le rôle et le comportement de l'IA. C'est l'équivalent des instructions permanentes.
+
+```
+Tu es un assistant pour une petite entreprise de services. 
+Tu analyses des documents PDF de devis signés envoyés par des clients.
+
+Ton travail est de :
+1. Vérifier que le document est bien un devis signé (et non une facture, un contrat ou autre chose)
+2. Si c'est bien un devis signé, extraire les informations clés : nom du client, montant total, objet de la prestation
+3. Rédiger un email de confirmation chaleureux et professionnel en français, personnalisé avec ces informations
+
+Réponds UNIQUEMENT en JSON valide, sans aucun texte avant ou après, avec cette structure exacte :
+{
+  "est_un_devis": true ou false,
+  "client_nom": "nom du client ou null",
+  "montant": "montant total ou null",
+  "prestation": "description courte de la prestation ou null",
+  "email_sujet": "objet de l'email de réponse",
+  "email_corps": "corps complet de l'email de réponse"
+}
+```
+
+### Configurer le prompt utilisateur
+
+Le **prompt utilisateur** contient les données dynamiques — ici, le contenu du PDF.
+
+```
+Voici le contenu du document PDF reçu par email :
+
+---
+{{ $('Extract from File').item.json.text }}
+---
+
+Expéditeur de l'email : {{ $('Gmail Trigger').item.json.from }}
+Objet de l'email : {{ $('Gmail Trigger').item.json.subject }}
+
+Analyse ce document et fournis ta réponse JSON.
+```
+
+### Script formateur — L'art du prompt
+> *"Ce qu'on vient d'écrire s'appelle un 'prompt'. C'est l'instruction qu'on donne à l'IA. Remarquez trois choses importantes : on lui a donné un rôle précis, on lui a dit exactement quoi faire étape par étape, et on lui a demandé un format de sortie JSON très strict. Ce dernier point est crucial : si l'IA répond en prose libre, on ne peut pas utiliser sa réponse dans le workflow. En lui imposant du JSON, on peut brancher sa réponse sur des nœuds suivants comme n'importe quelle autre donnée."*
+
+---
+
+## Étape 3 — Parser la réponse JSON de Gemini (10 min)
+
+La réponse de Gemini arrive comme une chaîne de texte. On doit la convertir en objet JSON exploitable.
+
+### Ajouter le nœud "Code"
+1. Rechercher **"Code"** → ajouter
+2. **Language** : JavaScript
+3. Code :
+```javascript
+const responseText = $input.item.json.text;
+
+// Nettoyer la réponse (Gemini peut parfois ajouter des backticks)
+const cleaned = responseText
+  .replace(/```json/g, '')
+  .replace(/```/g, '')
+  .trim();
+
+const parsed = JSON.parse(cleaned);
+
+return { json: parsed };
+```
