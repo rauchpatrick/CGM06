@@ -86,3 +86,4 @@ Pour Virginie : {{ $('Gmail Trigger').item.binary[Object.keys($('Gmail Trigger')
 
 ## Module 6
 
+{{ Object.keys($('Gmail Trigger').item.binary)[0] }}
