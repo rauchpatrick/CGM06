@@ -76,5 +76,11 @@ Dans le *Gmail trigger* activer l'option Download attachments => on observe alor
 
 ## Module 5
 
+{{ $('Gmail Trigger').item.binary[Object.keys($('Gmail Trigger').item.binary)[0]].fileName }}
+
+{{ $('Gmail Trigger').item.binary[Object.keys($('Gmail Trigger').item.binary)[0]] }}
+
+
+
 ## Module 6
 
