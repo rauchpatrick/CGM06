@@ -1,0 +1,39 @@
+﻿code_produit;designation;fournisseur;unite;prix_unitaire_ht;date_derniere_facture
+VEAU;Épaule de veau désossée;GrossiFrais SAS;kg;16,50;2026-08-28
+BEUR;Beurre doux 82 % MG - plaque 1 kg;GrossiFrais SAS;kg;9,80;2026-08-28
+CREM;Crème liquide 35 % MG - brique 1 L;GrossiFrais SAS;L;4,20;2026-08-28
+FARI;Farine de blé T55;GrossiFrais SAS;kg;0,92;2026-08-21
+ARBO;Riz arborio;GrossiFrais SAS;kg;3,40;2026-08-28
+HUIL;Huile d'olive vierge extra;GrossiFrais SAS;L;8,90;2026-08-21
+PARM;Parmigiano Reggiano AOP 24 mois;GrossiFrais SAS;kg;22,00;2026-08-28
+RIZL;Riz long grain;GrossiFrais SAS;kg;1,85;2026-08-21
+FEUI;Pâte feuilletée pur beurre;GrossiFrais SAS;kg;6,70;2026-08-28
+SUCR;Sucre semoule;GrossiFrais SAS;kg;1,10;2026-08-14
+FOND;Fond blanc de volaille déshydraté;GrossiFrais SAS;kg;14,20;2026-08-14
+VAIS;Liquide vaisselle professionnel 5 L;GrossiFrais SAS;unité;12,50;2026-08-14
+DEGR;Dégraissant four et hotte 5 L;GrossiFrais SAS;unité;18,90;2026-08-07
+SACS;Sacs poubelle 110 L (carton de 200);GrossiFrais SAS;carton;24,00;2026-08-07
+GANT;Gants nitrile (boîte de 100);GrossiFrais SAS;boîte;7,90;2026-08-21
+CDR;Côtes-du-Rhône rouge AOC 75 cl;Boissons & Co SA;bouteille;6,20;2026-08-20
+MAC;Mâcon-Villages blanc AOC 75 cl;Boissons & Co SA;bouteille;6,95;2026-08-20
+BIER;Bière blonde pression - fût 30 L;Boissons & Co SA;fût;96,00;2026-08-20
+EAUP;Eau minérale plate 1 L;Boissons & Co SA;bouteille;0,48;2026-08-20
+EAUG;Eau minérale gazeuse 1 L;Boissons & Co SA;bouteille;0,60;2026-08-20
+JUS;Jus de pomme artisanal 1 L;Boissons & Co SA;bouteille;2,10;2026-08-06
+CAFE;Café en grains pur arabica 1 kg;Boissons & Co SA;kg;16,50;2026-08-06
+SIRO;Sirop de grenadine 1 L;Boissons & Co SA;bouteille;4,80;2026-08-06
+OEUF;Œufs plein air - plateau de 30;EARL Ferme des Trois Chênes;plateau;7,50;2026-08-22
+POUL;Poulet fermier Label Rouge;EARL Ferme des Trois Chênes;kg;9,60;2026-08-22
+LAIT;Lait entier cru;EARL Ferme des Trois Chênes;L;1,20;2026-08-22
+FBLA;Fromage blanc fermier;EARL Ferme des Trois Chênes;kg;4,60;2026-08-08
+PDT;Pommes de terre Agata;Le Potager de Léon;kg;1,05;2026-08-23
+CARO;Carottes;Le Potager de Léon;kg;1,40;2026-08-23
+OIGN;Oignons jaunes;Le Potager de Léon;kg;1,30;2026-08-23
+CHAM;Champignons de Paris;Le Potager de Léon;kg;4,70;2026-08-23
+POMM;Pommes Reine des Reinettes;Le Potager de Léon;kg;2,40;2026-08-23
+SALA;Salade batavia;Le Potager de Léon;pièce;1,10;2026-08-23
+HERB;Herbes fraîches (botte);Le Potager de Léon;botte;0,90;2026-08-23
+COMT;Comté AOP 18 mois;Fromagerie du Vallon;kg;24,00;2026-08-14
+BRIE;Brie de Meaux AOP;Fromagerie du Vallon;kg;15,80;2026-08-14
+CHEV;Bûche de chèvre affinée;Fromagerie du Vallon;kg;19,20;2026-08-14
+ROQU;Roquefort AOP;Fromagerie du Vallon;kg;26,50;2026-08-14
